@@ -1,0 +1,10 @@
+<% extend 'layout' %>
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/javascripts/chat.js"></script>
+<h1>socket.io</h1>
+<div id="connectId"></div>
+<input type="text" id="message" value="">
+<input type="button" value="send" onclick="SendMsg()">
+<input type="button" value="disconect" onclick="DisConnect()">
+<div id="receiveMsg"></div>
