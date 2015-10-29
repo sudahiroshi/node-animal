@@ -9,7 +9,7 @@ express4.xに対応したnode-chatです．
 ## 使い方
 
 ```
-$ git clone
+$ git clone http://git.mesh.cx/gitbucket/git/suda/node-chat2.git
 $ cd node-chat2
 $ npm install
 $ npm start
