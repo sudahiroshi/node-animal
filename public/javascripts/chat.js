@@ -29,8 +29,12 @@ window.addEventListener( 'load', function() {
 // message sending
 function SendMsg() {
 	var msg = document.getElementById( "message" ).value;
-	console.log( msg );
-	socket.emit( 'message', msg );
+	var words = msg.split(" ");
+	var chara = document.getElementById( words[0] );
+	if( chara != null ) {
+		console.log( msg );
+		socket.emit( 'message', msg );
+	}
 }
 
 // disconect
