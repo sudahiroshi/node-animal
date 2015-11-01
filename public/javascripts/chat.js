@@ -12,12 +12,14 @@ window.addEventListener( 'load', function() {
 
 	// when receive a message
 	socket.on( 'message', function(msg) {
-		document.getElementById( "receiveMsg" ).appendChild( document.createTextNode( msg  ) );
-		document.getElementById( "receiveMsg" ).appendChild( document.createElement( "br" ) );
+		document.getElementById( "receiveMsg" ).innerHTML = msg;
 		var words = msg.split(" ");
-		if( words[0] == "rabit" ) {
-			rabit.style.left = words[1] + 'px';
-			rabit.style.top = words[2] + 'px';
+		var chara = document.getElementById( words[0] );
+		if( words[1] == "move" ) {
+			chara.style.left = words[2] + 'px';
+			chara.style.top = words[3] + 'px';
+		} else if( words[1] == "size" ) {
+			chara.style.width = words[2] + 'px';
 		}
 	});
 

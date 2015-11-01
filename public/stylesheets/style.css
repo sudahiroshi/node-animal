@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -15,4 +15,9 @@ a {
   -moz-transition-property: all;
   -moz-transition-duration: 2s;
   -moz-transition-timing-function: ease-in-out;
+}
+
+.zero {
+  padding: 0px;
+  margin: 0px;
 }
