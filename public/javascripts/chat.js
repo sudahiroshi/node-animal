@@ -1,20 +1,18 @@
-socket = io.connect();
-
 window.addEventListener( 'load', function() {
-	rabit = document.getElementById( 'rabit' );
-
 	// connect to server
+	socket = io.connect();
 
 	// when connected
 	socket.on( 'connect', function(msg) {
-		document.getElementById( "connectId" ).innerHTML = "your ID::" + socket.id;
+		console.log(socket.id);
+		document.querySelector( "#connectId" ).innerHTML = "ID::" + socket.id;
 	});
 
 	// when receive a message
 	socket.on( 'message', function(msg) {
-		document.getElementById( "receiveMsg" ).innerHTML = msg;
-		var words = msg.split(" ");
-		var chara = document.getElementById( words[0] );
+		document.querySelector( "#receiveMsg" ).innerHTML = msg;
+		let words = msg.split(" ");
+		let chara = document.querySelector( '#' + words[0] );
 		if( words[1] == "move" ) {
 			chara.style.left = words[2] + 'px';
 			chara.style.top = words[3] + 'px';
@@ -23,14 +21,20 @@ window.addEventListener( 'load', function() {
 		}
 	});
 
-
+	let animals = ["bare", "dog", "elephant", "giraffe", "koala", "panda", "pig", "rabbit"];
+	animals.forEach( (animal) => {
+		let chara = document.querySelector( '#' + animal );
+		chara.style.left = '0px';
+		chara.style.top = '200px';
+		chara.style.width = '100px';
+	})
 });
 
 // message sending
 function SendMsg() {
-	var msg = document.getElementById( "message" ).value;
-	var words = msg.split(" ");
-	var chara = document.getElementById( words[0] );
+	let msg = document.querySelector( "#message" ).value;
+	let words = msg.split(" ");
+	let chara = document.querySelector( '#' + words[0] );
 	if( chara != null ) {
 		console.log( msg );
 		socket.emit( 'message', msg );
