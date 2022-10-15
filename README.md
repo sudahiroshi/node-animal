@@ -11,7 +11,7 @@ $ cd node-animal
 $ npm install
 $ npm start
 Webブラウザから3000番ポートに接続する．
-例：　http://localhost:3000/chat
+例：　http://localhost:3000/
 ```
 
 複数のWebブラウザから接続すると，ブラウザ間でキャラクターの動きが同期します．
