@@ -27,8 +27,16 @@ window.addEventListener( 'load', function() {
 		chara.style.left = '0px';
 		chara.style.top = '200px';
 		chara.style.width = '100px';
-	})
-});
+	});
+	  setTimeout(() => {
+	    let left = 0;
+	    animals.forEach((animal) => {
+	      let chara = document.querySelector('#' + animal);
+	      chara.style.left = left + 'px';
+	      left += 100;
+	    });
+	  }, 1000);
+	});
 
 // message sending
 function SendMsg() {
